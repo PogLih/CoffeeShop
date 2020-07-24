@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="44124a7d-eaa8-465c-bba3-a02c63e3a3c2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select BillInfo.idBill,BillInfo.Price,BillInfo.Quantity,Drinks.name,Bill.*
+from BillInfo inner join Drinks on BillInfo.idDrinks = Drinks.id inner join Bill on BillInfo.idBill = Bill.id
+where idBill = (select top 1 id from Bill where OrderNumber = 55 order by id desc)]]>
+	</queryString>
+	<field name="idBill" class="java.lang.Integer"/>
+	<field name="Price" class="java.lang.Double"/>
+	<field name="Quantity" class="java.lang.Integer"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="DateCheckIn" class="java.lang.String"/>
+	<field name="OrderNumber" class="java.lang.Integer"/>
+	<field name="Staffname" class="java.lang.String"/>
+	<field name="CustomerPhoneNumber" class="java.lang.String"/>
+	<field name="TotalPrice" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement x="209" y="0" width="129" height="65" uuid="db36ec82-9bfd-4171-9174-e70ea4f90ba2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Huy Thinh]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="15" width="100" height="20" uuid="b604a50b-9961-4f52-b22e-f539f20b78a5"/>
+				<textFieldExpression><![CDATA[$F{Staffname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="b2951835-b74e-440e-bde4-5d0b875df415"/>
+				<text><![CDATA[name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="0" width="100" height="20" uuid="7b1844f2-d48e-45d5-a457-b43cd7e6ea33"/>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="0" width="100" height="20" uuid="2831633f-ebc3-47e2-9ae8-785097461160"/>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="18ba59c4-2bda-459c-b30d-e587fb0f324e"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="155" y="0" width="100" height="20" uuid="280b5532-beef-4c03-adbc-98861761f744"/>
+				<textFieldExpression><![CDATA[$F{Quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="338" y="0" width="100" height="20" uuid="1dc7d79a-f17b-46f3-b6ea-7f8c9fdde512"/>
+				<textFieldExpression><![CDATA[$F{Price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="186e6a28-bd87-4606-b2c7-8b908d75ee5d"/>
+				<textFieldExpression><![CDATA[$F{CustomerPhoneNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="338" y="0" width="100" height="20" uuid="9714bf28-1f94-4c7a-8a10-d32e473de5ca"/>
+				<textFieldExpression><![CDATA[$F{TotalPrice}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

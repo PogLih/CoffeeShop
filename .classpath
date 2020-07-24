@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Team1_CoffeShopProject/src"/>
+	<classpathentry kind="lib" path="libbraries/core-3.3.0.jar"/>
+	<classpathentry kind="lib" path="libbraries/javase-3.3.0.jar"/>
+	<classpathentry kind="lib" path="libbraries/javax.mail.jar"/>
+	<classpathentry kind="lib" path="libbraries/jcalendar-1.2.2.jar"/>
+	<classpathentry kind="lib" path="libbraries/jfreechart-1.5.0.jar"/>
+	<classpathentry kind="lib" path="libbraries/KControls.jar"/>
+	<classpathentry kind="lib" path="libbraries/sqljdbc4-2.0.jar"/>
+	<classpathentry kind="lib" path="libbraries/Webcam.jar"/>
+	<classpathentry kind="output" path="Team1_CoffeShopProject/build/classes"/>
+</classpath>
